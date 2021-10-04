@@ -13,13 +13,6 @@ public class Samsung extends DeviceAbstract {
     // crash "com.samsung.android.lool","com.samsung.android.sm.ui.battery.AppSleepListActivity"
     private static final String SAMSUNG_SYSTEMMANAGER_POWERSAVING_ACTION = "com.samsung.android.sm.ACTION_BATTERY";
     private static final String SAMSUNG_SYSTEMMANAGER_NOTIFICATION_ACTION = "com.samsung.android.sm.ACTION_SM_NOTIFICATION_SETTING";
-
-    private static final String SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V5 = "com.samsung.android.lool";
-    private static final String SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V5_ACTIVITY = "com.samsung.android.sm.battery.ui.usage.CheckableAppListActivity";
-
-    private static final String SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V4 = "com.samsung.android.lool";
-    private static final String SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V4_ACTIVITY = "com.samsung.android.sm.battery.ui.BatteryActivity";
-
     // ANDROID 7.0/8.0
     private static final String SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V3 = "com.samsung.android.lool";
     private static final String SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V3_ACTIVITY = "com.samsung.android.sm.ui.battery.BatteryActivity";
@@ -80,32 +73,19 @@ public class Samsung extends DeviceAbstract {
         }
         // reset
         intent = ActionsUtils.createIntent();
-
-        intent.setComponent(new ComponentName(SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V5,
-                SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V5_ACTIVITY));
-        if (ActionsUtils.isIntentAvailable(context, intent)) {
-            return intent;
-        }
-
-        intent.setComponent(new ComponentName(SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V4,
-                SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V4_ACTIVITY));
-        if (ActionsUtils.isIntentAvailable(context, intent)) {
-            return intent;
-        }
-
         intent.setComponent(new ComponentName(SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V3,
-                SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V3_ACTIVITY));
+                                              SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V3_ACTIVITY));
         if (ActionsUtils.isIntentAvailable(context, intent)) {
             return intent;
         }
 
         intent.setComponent(new ComponentName(SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V2,
-                SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V2_ACTIVITY));
+                                              SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V2_ACTIVITY));
         if (ActionsUtils.isIntentAvailable(context, intent)) {
             return intent;
         }
         intent.setComponent(new ComponentName(SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V1,
-                SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V1_ACTIVITY));
+                                              SAMSUNG_SYSTEMMANAGER_POWERSAVING_PACKAGE_V1_ACTIVITY));
         if (ActionsUtils.isIntentAvailable(context, intent)) {
             return intent;
         }
@@ -117,7 +97,7 @@ public class Samsung extends DeviceAbstract {
     public Intent getActionAutoStart(Context context) {
         Intent intent = ActionsUtils.createIntent();
         intent.setComponent(new ComponentName(SAMSUNG_SYSTEMMANAGER_AUTOSTART_PACKAGE_V1,
-                SAMSUNG_SYSTEMMANAGER_AUTOSTART_PACKAGE_V1_ACTIVITY));
+                                              SAMSUNG_SYSTEMMANAGER_AUTOSTART_PACKAGE_V1_ACTIVITY));
         return intent;
     }
 
